@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Items</title>
-<link rel="stylesheet" href="./styles/cart.css">
-<link rel="stylesheet" href="./styles/products1.css">
-<link rel="stylesheet" href="./styles/navbar.css" />
+<link rel="stylesheet" href="/styles/cart.css">
+<link rel="stylesheet" href="/styles/products1.css">
+<link rel="stylesheet" href="/styles/navbar.css" />
 <link rel = "icon" href ="./img/download-modified.png">
 <script src="https://kit.fontawesome.com/15dfb88336.js" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/675a12bd74.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./styles/footer.css">
+<link rel="stylesheet" href="/styles/footer.css">
 </head>
 <body>
     <header id="dr-header"></header>
@@ -32,7 +32,16 @@
     <h1 id="cartItems">Cart Items</h1>
     <div id="cartcont">
        
-     <div id="itemsdiv" ></div>
+     <div id="itemsdiv" >
+      
+            <div class="makeupDiv">
+                <img class = "dVimg" src= "<%-cart.image_link%>"/>
+                <p><%- cart.name %></p>
+                <p class="price"><%- cart.price %>$</p>
+                <button class="deletebtn"><i class='far fa-trash-alt fa-2x'></i></button>
+            </div>
+
+     </div>
         <div id="infodiv">
             <div id="cartcoupon" class="shadow">
                 <div>
@@ -67,7 +76,7 @@
 </body>
 </html>
 
-<script src="./scripts/cart.js"></script>
+<!-- <script src="./scripts/cart.js"></script> -->
 <script type="module" src="/scripts/navscript.js"></script>
 <script type="module">
   let DK_main =  document.getElementById("DK_main")

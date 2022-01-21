@@ -1,13 +1,12 @@
 const express = require("express");
-const articlesController = require("./src/controllers/articles.controller")
-
+const articlesController = require("./controllers/articles.controller")
+const cartController = require("./controllers/cart.controller")
 const { body } = require("express-validator");
 
 
 
 const app = express();
 app.use(express.json());
-
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -28,6 +27,7 @@ app.use(express.static("public"));
 const product = require("./controllers/product.controller");
 app.use("/products",product);
 
+app.use("/cart", cartController);
 app.get("/", async (req, res)=>{
     res.render("index")
 })

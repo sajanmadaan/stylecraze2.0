@@ -9,9 +9,6 @@ const newToken = (user) => {
     return jwt.sign({ user: user }, process.env.JWT_SECRET_KEY);
 };
 
-
-
-
 const register = async (req, res) => {
 
 
@@ -31,12 +28,9 @@ const register = async (req, res) => {
 
         const token = newToken(user);
 
-        return res.status(201).send({ user, token });
-
-
-
+        return res.render("index");
     } catch (err) {
-        return res.status(500).send({ message: err.message });
+        return res.render("error", err);
     }
 };
 
@@ -59,15 +53,15 @@ const login = async (req, res) => {
 
 
         if (!match)
-            return res.status(400).send({ message: "Either Email and password incorrect" });
+        var err = "Email or password is wrong";
+        return res.render("error", {err});
 
         const token = newToken(user);
-
-        return res.status(201).send({ user, token });
+        return res.render("index",{user});
     }
 
     catch (err) {
-        return res.status(500).send({ message: err.message });
+        return res.render("error",err);
     }
 
 };

@@ -20,7 +20,8 @@ app.set("view engine", "ejs"); // root directory for views views/
 app.use(express.static("public"));
 
 app.get("/", async (req, res) => {
-    res.render("index");
+    let user = null;
+    res.render("index",{user});
 });
 
 app.get("/about-us", async (req, res) => {
@@ -119,9 +120,8 @@ app.get("/tools", async (req, res) => {
 const { register, login } = require("./src/controllers/authcontroller");
 
 app.post("/register",
-    body("username").notEmpty().withMessage("Name is required"),
     body("email").notEmpty().withMessage("Email is required"),
-    body("mobile_No").notEmpty().isLength({ min: 10 }).withMessage("Mobile Number is required "),
+    body("mobile_no").notEmpty().isLength({ min: 10 }).withMessage("Mobile Number is required "),
     body("address").notEmpty().withMessage("Please enter the Address"),
     body("pincode").notEmpty().isLength({ min: 6 }).withMessage("Pincode is required and must be 6 digit"),
     body("password").notEmpty().isLength({ min: 8 }).withMessage("password atleast have 8 Character and have no Special character"),

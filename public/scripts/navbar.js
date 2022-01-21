@@ -6,41 +6,44 @@ function navbar() {
       <div id="modal-container">
       <div id="modal">
         <div class="form-div" id="log-in-form-div">
-          <label for="uname"><b>Username:</b></label>
+        <form id="login-form" action = "/login" method = "POST">
+          <label for="email"><b>Username:</b></label>
           <input
-            type="text"
+            type="email"
             placeholder="Enter Username"
-            name="uname"
+            name="email"
             required
-            id="uname"
+            id="email"
           />
-          <label for="psw"><b>Password:</b></label>
+          <label for="password"><b>Password:</b></label>
           <input
             type="password"
             placeholder="Enter Password"
-            name="psw"
+            name="password"
             required
-            id="psw"
+            id="password"
           />
-          <button id="logInUser">Login</button>
+          <button type="submit" id="logInUser">Login</button>
+          </form>
 
           <div><p>New User? <span id="register-link">Register here</span></p></div>
         </div>
         <div class = "form-div" id="sign-up-form-div">
-        <label for="sname"><b>Username:</b></label>
+        <form id="register-form" action="/register" method="POST">
+        <label for="email"><b>Email:</b></label>
 <input
   type="text"
-  placeholder="Enter Username"
-  name="sname"
+  placeholder="Enter Email"
+  name="email"
   required
-  id="sname"
+  id="email"
 />
-<label for="smobile"><b>Mobile No:</b></label>
+<label for="mobile_no"><b>Mobile No:</b></label>
 <input
   type="number"
   placeholder="Enter Mobile No"
-  name="smobile"
-  id="smobile"
+  name="mobile_no"
+  id="mobile_no"
   required
 />
 <label for="address"><b>Address:</b></label>
@@ -51,24 +54,25 @@ function navbar() {
   id="address"
   required
 />
-<label for="pin"><b>Pin Code:</b></label>
+<label for="pincode"><b>Pin Code:</b></label>
 <input
   type="number"
   placeholder="Pin Code"
-  name="Pin Code"
-  id="pin"
+  name="pincode"
+  id="pincode"
   required
 />
 
-<label for="spsw"><b>Password:</b></label>
+<label for="password"><b>Password:</b></label>
 <input
   type="password"
   placeholder="Enter Password"
-  name="spsw"
-  id="spsw"
+  name="password"
+  id="password"
   required
 />
-<button id="signUpUser">Sign Up</button>
+<button type="submit" id="signUpUser">Sign Up</button>
+</form>
 
 <div><p>Already a User? <span id="login-link">Log in here</span></p></div>
         </div>

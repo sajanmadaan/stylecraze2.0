@@ -45,6 +45,7 @@ app.get("/bridalmakeup", async (req, res) => {
 });
 
 app.get("/cart", async (req, res) => {
+    
     res.render("cart");
 });
 

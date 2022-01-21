@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema(
         mobile_no: { type: Number, required: true },
         address: { type: String, required: true },
         pincode: { type: Number, required: true },
-        password: { type: String, required: true }
+        password: { type: String, required: true },
     }, {
     timestamps: true,
     versionKey: false,

@@ -104,12 +104,17 @@ body{
     padding-top: 4%;
     padding-bottom: 5%;
     border-radius: 5px;
+  
+}
+.dVt{
+    color: black;
 }
 .dVbrand,.dVtype{
     cursor: pointer;
     padding-top: 3%;
    
 }
+
 .dVbrands_icon,.dvTypes_icon{
     display: grid;
     grid-template-columns: 85% 15%;

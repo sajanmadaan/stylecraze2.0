@@ -55,7 +55,7 @@ header {
   justify-content: space-between;
   /* border: 2px solid black; */
   width: 100%;
-  font-size: 17px;
+  font-size: 14px;
   flex-wrap: wrap;
 }
 .dr-container > ul > li {

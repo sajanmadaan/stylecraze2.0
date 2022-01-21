@@ -119,8 +119,8 @@ app.get("/thankyou", async (req, res) => {
     res.render("thankyou");
 });
 
-app.get("/tools", async (req, res) => {
-    res.render("tools");
+app.get("/articles", async (req, res) => {
+    res.render("articles");
 })
 
 const { register, login } = require("./src/controllers/authcontroller");

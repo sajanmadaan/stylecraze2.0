@@ -8,21 +8,33 @@ const app = express();
 app.use(express.json());
 
 
-
-// for parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+
+app.use("/styles", express.static(__dirname+ "public/styles"))
+app.use("/scripts", express.static(__dirname+ "public/scripts"))
+app.use("/img", express.static(__dirname+ "public/img"))
+
 app.use("/styles", express.static(__dirname + "public/styles"));
 app.use("/scripts", express.static(__dirname + "public/scripts"));
 app.use("/img", express.static(__dirname + "public/img"));
 app.use(express.json());
 
+
 app.set("view engine", "ejs"); // root directory for views views/
 app.use(express.static("public"));
 
+
+const product = require("./controllers/product.controller");
+app.use("/products",product);
+
+app.get("/", async (req, res)=>{
+    res.render("index")
+})
 app.get("/", async (req, res) => {
     let user = null;
     res.render("index",{user});
 });
+
 
 app.get("/about-us", async (req, res) => {
     res.render("about-us");
@@ -93,13 +105,6 @@ app.get("/payment", async (req, res) => {
     res.render("payment");
 });
 
-app.get("/products", async (req, res) => {
-    res.render("products");
-});
-
-app.get("/products1", async (req, res) => {
-    res.render("products1");
-});
 
 app.get("/skincare", async (req, res) => {
     res.render("skincare");
@@ -115,7 +120,7 @@ app.get("/thankyou", async (req, res) => {
 
 app.get("/tools", async (req, res) => {
     res.render("tools");
-});
+})
 
 const { register, login } = require("./src/controllers/authcontroller");
 
@@ -131,5 +136,6 @@ app.post("/login",
     body("email").notEmpty().withMessage("Email is required"),
     body("password").notEmpty().isLength({ min: 8 }).withMessage("password atleast have 8 Character and have no Special character"),
     login);
+
 
 module.exports = app;

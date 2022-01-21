@@ -101,7 +101,7 @@ localStorage.setItem("paydetails",JSON.stringify(Bill))
 var checkout =document.getElementById("checkout")
 checkout.addEventListener("click",goToPay)
 function goToPay(){
-window.open("payment.html");
+window.open("/payment");
 }
 
 

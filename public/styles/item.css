@@ -56,9 +56,13 @@
 #sright_top p{
   padding: 8px;
 }
-#snam {
+#snam{
   font-size: 20px;
   font-weight: bold;
+  color: #fe5c75;
+}
+#sprod{
+  font-size: 17px;
 }
 #sright_top span {
   margin-right: 10px;
@@ -70,7 +74,7 @@
   font-weight: bold;
   font-size: 22px;
 }
-#sprod,#sprice{
+#sprice{
   font-weight: bold;
   color: #fe5c75;
 }
@@ -133,6 +137,7 @@
   display: grid;
   grid-template-columns: repeat(2,40%);
   margin-bottom:30px;
+  margin-top:30px;
   grid-gap: 5%;
   margin-left: 10%;
 }

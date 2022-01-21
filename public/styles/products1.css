@@ -79,7 +79,7 @@ body{
     outline: none;
     cursor: pointer;
 }
-#dVbuyBtn{
+.dVbuyBtn{
     width: 80%;
     background-color:#fc2779;
     height: 50px;

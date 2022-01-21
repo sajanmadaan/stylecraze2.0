@@ -8,14 +8,14 @@
     ">
     <title>Items</title>
     <link rel = "icon" href ="./img/download-modified.png">
-    <link rel="stylesheet" href="./styles/item.css">
-    <link rel="stylesheet" href="./styles/navbar.css" />   
+    <link rel="stylesheet" href="/styles/item.css">
+    <link rel="stylesheet" href="/styles/navbar.css" />   
     <script src="https://kit.fontawesome.com/15dfb88336.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/675a12bd74.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="/styles/footer.css">
 </head>
 <body>
     <header id="dr-header"></header>
@@ -24,20 +24,22 @@
           <a href="/">Home</a>
         </li> » 
         <li class="sli">
-          <a href="/products1">Products</a>
+          <a href="/products">Products</a>
         </li>
     </ol>
     <div class="sitem_container">
         <div class="sleft">
             <div class="sleft_right">
-                <img id="smainImg" src="https://cdn2.stylecraze.com/wp-content/uploads/2020/04/Maybelline-New-York-Lip-Smooth-Color-Bloom-img-product.jpg.webp">
+                <img id="smainImg" src="<%-product.image_link%>">
             </div>
         </div>
         <div class="sright">
             <div id="sright_top">
-                <p id="snam"></p>
-                <p id="sprod"><span id="sprod_id"></span><span id="sstar">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-                <p id="sprice"><span id="spayable"></span></p>
+                
+                <p id="snam"><%-product.name%></p>
+                <p id="sprod"><span id="sprod_id"><%-product.description%></span></p>
+                <p id="sprice"><span id="spayable">Price:<%-product.price%>$</span></p>
+                <span id="sstar">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 <p id="semi"><span>EMI starting on order above &#8377;3,765</span><a href="#top">SEE EMI OPTIONS</a></p>
             </div>
             <div id="sright_second">
@@ -91,7 +93,6 @@
 <div id = "DK_last"></div>
 </body>
 </html>
-<script src="./scripts/item.js"></script>
 <script type="module" src="/scripts/navscript.js"></script>
 <script type="module">
     let DK_main =  document.getElementById("DK_main")
@@ -104,4 +105,10 @@
     import copy from "../scripts/copy.js"
     DK_last.innerHTML = copy()
 
+</script>
+<script>
+    var buyNow = document.getElementById("sbuyNow");
+    buyNow.addEventListener("click", ()=> {
+    window.location.href = "/cart";
+    });
 </script>

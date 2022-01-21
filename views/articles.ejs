@@ -41,14 +41,47 @@
           <a href="/articles">Articles</a>
         </li>
     </ol>
-    <div id="DproductCont"></div>
+    <div id="DproductCont">
+        <% articles.forEach(el => { %>
+            <div> 
+             <img src="<%- el.prodUrl %>" alt="Article">
+ 
+             <h2 class="dVproduct_categ"><%- el.category %></h2>
+             
+             <a class="dVproduct_title"><%- el.title %></a>
+     
+             <h3 class="dVproduct_desc"><%- el.desc %></h3>
+             
+             <a class="dVproduct_readMore" href="/products">GO TO SHOP</a>
+           </div>
+        <% }); %>
+    </div>
     <center><span id="dVnowMoredata"></span></center>
     <center><button id="dVloadMore">Load More</button></center>
     <div id = "DK_main"></div>
     <div id = "DK_last"></div>
 </body>
 </html>
-<script type="module" src="../scripts/products.js"></script>
+<!-- <script type="module" src="../scripts/products.js"></script> -->
+<script>
+
+    // To add filter
+    document.getElementById("Dcateg").addEventListener("change", dofilter)
+    function dofilter(e)
+    {
+        window.location.href = `/articles?category=${e.target.value}` 
+    }
+
+    // for Load More
+    let click = 1
+    document.getElementById("dVloadMore").addEventListener("click", moreData); 
+    function moreData()
+    {
+        click++;
+        console.log(click, "clicked");
+        window.location.href = `/articles?page=${click}`
+    }
+</script>
 <script type="module">
     let DK_main =  document.getElementById("DK_main")
     import footer from "../scripts/footer.js"

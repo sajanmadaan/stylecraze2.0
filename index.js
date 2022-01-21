@@ -1,5 +1,5 @@
 const express = require("express");
-
+const articlesController = require("./src/contollers/articles.controller")
 const app = express();
 
 // for parsing application/x-www-form-urlencoded
@@ -9,6 +9,7 @@ app.use("/scripts", express.static(__dirname+ "public/scripts"))
 app.use("/img", express.static(__dirname+ "public/img"))
 app.use(express.json());
 
+app.use("/articles", articlesController)
 app.set("view engine", "ejs"); // root directory for views views/
 app.use(express.static("public"));
 

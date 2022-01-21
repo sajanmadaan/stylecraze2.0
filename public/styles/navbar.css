@@ -55,7 +55,7 @@ header {
   justify-content: space-between;
   /* border: 2px solid black; */
   width: 100%;
-  font-size: 17px;
+  font-size: 14px;
   flex-wrap: wrap;
 }
 .dr-container > ul > li {
@@ -141,7 +141,7 @@ a {
   position: absolute;
   display: none;
   background-color: white;
-  z-index:1000;
+  z-index: 1000;
 }
 
 .about-us-div ul {
@@ -273,7 +273,8 @@ a {
   font-weight: 600;
   letter-spacing: 1px;
 }
-.far,.fas{
+.far,
+.fas {
   color: #fe5c75;
 }
 
@@ -287,6 +288,12 @@ a {
 
 #sign-up-form-div {
   display: none;
+}
+
+#login-form,#register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #login-link,

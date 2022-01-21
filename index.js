@@ -1,4 +1,5 @@
 const express = require("express");
+const articlesController = require("./src/controllers/articles.controller")
 
 const { body } = require("express-validator");
 
@@ -19,7 +20,7 @@ app.use("/scripts", express.static(__dirname + "public/scripts"));
 app.use("/img", express.static(__dirname + "public/img"));
 app.use(express.json());
 
-
+app.use("/articles", articlesController)
 app.set("view engine", "ejs"); // root directory for views views/
 app.use(express.static("public"));
 

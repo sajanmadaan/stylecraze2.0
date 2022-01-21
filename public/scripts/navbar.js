@@ -127,7 +127,7 @@ function navbar() {
           <div></div>
         </li>
         <li>
-          <a href="">Tools</a>
+          <a href="">Articles</a>
           <div></div>
         </li>
         <li>
@@ -632,7 +632,7 @@ function navbar() {
           </div>
         </li>
         <li>
-          <a href="/tools">tools</a>
+          <a href="/articles">articles</a>
         </li>
         <li><a href="/products">products</a></li>
         <li>

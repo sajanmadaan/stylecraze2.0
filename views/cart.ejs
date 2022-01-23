@@ -32,15 +32,15 @@
     <h1 id="cartItems">Cart Items</h1>
     <div id="cartcont">
        
-     <div id="itemsdiv" >
-      
+     <div id="itemsdiv">
+         <% cart.product_id.forEach(el => { %>
             <div class="makeupDiv">
-                <img class = "dVimg" src= "<%-cart.image_link%>"/>
-                <p><%- cart.name %></p>
-                <p class="price"><%- cart.price %>$</p>
+                <img class = "dVimg" src= "<%-el.image_link%>"/>
+                <p><%- el.name %></p>
+                <p class="price"><%-el.price  %>$</p>
                 <button class="deletebtn"><i class='far fa-trash-alt fa-2x'></i></button>
             </div>
-
+            <%  }) %> 
      </div>
         <div id="infodiv">
             <div id="cartcoupon" class="shadow">
@@ -52,11 +52,11 @@
             <div class="payinfo shadow">
                 <h1 id="pinkpay">Payment Details</h1>
                 <div class="costs">
-                    <div>Total Items <span id="itemqty"></span></div>
-                    <div>Total Value <span id="itemprice">$</span></div>
+                    <div>Total Items <span id="itemqty"><%- cart.qty %></span></div>
+                    <div>Total Value <span id="itemprice"><%-cart.totalprice.toFixed(2)  %>$</span></div>
                     <div class="pintextteal">Delivery cost at  <span>Free</span> </div>
                     <hr >
-                    <div>Total price <span id="totalprice" >$</span> </div>
+                    <div>Total price <span id="totalprice" ><%-cart.totalprice.toFixed(2)  %>$</span> </div>
                 </div>
                 <div class="lft">
                 <input type="checkbox"> <label for="">
@@ -66,7 +66,17 @@
                         <span>Towards Donation for the underprivileged</span>  </label>
                 </div>
                 <div class="rgt lft">
-                    <button id="checkout">CHECKOUT</button>
+                    <a href="findpayment/<%-cart._id %>"><button id="checkout">CHECKOUT</button></a>
+                </div>
+            </div>
+            <!-- trial for address :)-->
+            <div class="payinfo shadow">
+                <h1 id="pinkpay">Adress Details</h1>
+                <div class="costs">
+                    <div>Your Addreess <span id="itemqty"><%- cart.user_id.address %></span></div>
+                    <div>Mobile No. <span id="itemprice"><%- cart.user_id.mobile_no  %></span></div>
+                    <div>Pincode <span id="itemprice"><%- cart.user_id.pincode  %></span></div>
+                    <hr>
                 </div>
             </div>
         </div>
@@ -76,7 +86,7 @@
 </body>
 </html>
 
-<!-- <script src="./scripts/cart.js"></script> -->
+<!-- <script src="/scripts/cart.js"></script> -->
 <script type="module" src="/scripts/navscript.js"></script>
 <script type="module">
   let DK_main =  document.getElementById("DK_main")

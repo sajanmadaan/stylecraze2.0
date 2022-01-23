@@ -18,9 +18,7 @@ const register = async (req, res) => {
     let user = await User.findOne({ email: req.body.email }).lean().exec();
 
     if (user)
-      return res
-        .status(400)
-        .send({ message: "User with that email already exists" });
+ return res.status(400).send({ message: "User with that email already exists" });
 
     user = await User.create(req.body);
 
@@ -28,9 +26,14 @@ const register = async (req, res) => {
 
     return res.render("index");
   } catch (err) {
-    return res.render("error", err);
+    return res.render("error", {err});
   }
 };
+if (typeof localStorage === "undefined" || localStorage === null) {
+  var LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
+var c = localStorage.getItem("currentUser") || {};
 
 const login = async (req, res) => {
   try {
@@ -42,18 +45,23 @@ const login = async (req, res) => {
     let user = await User.findOne({ email: req.body.email });
 
     if (!user)
-      return res
-        .status(400)
-        .send({ message: "Either Email and password incorrect" });
+      return res.status(400).send({ message: "Either Email and password incorrect" });
 
     const match = user.checkPassword(req.body.password);
 
-    if (!match) {var err = "Email or password is wrong"
-    return res.render("error", { err });}
+    if (!match) {
+    let err = "Email or password is wrong"
+    return res.render("error", { err });
+    }                 
     const token = newToken(user);
-    return res.render("index", { user });
+    c= user;
+    console.log(c);
+    localStorage.setItem("currentUser",JSON.stringify(c))
+    console.log(c)
+    return res.render("index", {user});
   } catch (err) {
-    return res.render("error", err);
+    console.log(err, "err")
+    return res.render("error", {err});
   }
 };
 

@@ -1,4 +1,4 @@
-var cartItems = JSON.parse(localStorage.getItem("cartItm")) ||  [];
+var cartItems = JSON.parse(localStorage.getItem("stylecart")) ||  [];
 
 var mainDiv = document.getElementById("itemsdiv");
 display()
@@ -40,12 +40,10 @@ function display(){
     } 
     
     var deletebtn = document.createElement("button");
-    deletebtn.textContent = "delete";
-    deletebtn.innerHTML = "<i class='far fa-trash-alt fa-2x'></i>"
+
     deletebtn.addEventListener("click",function(){
     let index = findIndex(el,cartItems)
     cartItems.splice(index,1);
-    localStorage.setItem("cartItm",JSON.stringify(cartItems))
     mainDiv.innerHTML = null
     var Bill = cartItems.reduce(function(acc,cv){
         return acc + Number(cv.price);

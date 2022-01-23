@@ -9,9 +9,9 @@
   <link rel = "icon" href ="./img/download-modified.png">
   <link rel="icon" type="png" sizes="512x512"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles/payment.css" />
-  <link rel="stylesheet" href="./styles/navbar.css" /> 
-  <link rel="stylesheet" href="./styles/cart.css">
+  <link rel="stylesheet" href="/styles/payment.css" />
+  <link rel="stylesheet" href="/styles/navbar.css" /> 
+  <link rel="stylesheet" href="/styles/cart.css">
   <script
   src="https://kit.fontawesome.com/15dfb88336.js"
   crossorigin="anonymous"
@@ -25,7 +25,7 @@
           <a href="/">Home</a>
         </li> » 
         <li class="sli">
-            <a href="/products1">Products</a>
+            <a href="/products">Products</a>
           </li> »
         <li class="sli">
           <a href="/cart">Cart</a>
@@ -66,8 +66,18 @@
 
       <p><span><input type="checkbox"></span>
         <span>Save this card for future</span></p>
-      <button id="payNow">PAY NOW:</button>
+      <button id="payNow">PAY NOW: <span> <%- cartItms.totalprice.toFixed(2) %> $</span></button>
 
+       <!-- trial for address :)-->
+      <div class="credit-container address">
+        <h1 id="pinkpay">Adress Details</h1>
+        <div class="adress-cont">
+            <div>Your Addreess:<span> <%- cartItms.user_id.address %></span></div>
+            <div>Mobile No. <span > <%- cartItms.user_id.mobile_no  %></span></div>
+            <div>Pincode <span> <%- cartItms.user_id.pincode  %></span></div>
+            <hr>
+        </div>
+    </div>
     </div>
     <div id="orderPlaced">
       <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
@@ -89,9 +99,9 @@
 </body>
 
 </html>
-<script src="./scripts/payment.js"></script>
+<script src="/scripts/payment.js"></script>
 
-<script type="module" src="./scripts/navscript.js"></script>
+<script type="module" src="/scripts/navscript.js"></script>
 
 <script type="module">
   let DK_main =  document.getElementById("DK_main")

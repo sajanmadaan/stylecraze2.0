@@ -1,6 +1,6 @@
 const express = require("express");
-const articlesController = require("./controllers/articles.controller")
-const cartController = require("./controllers/cart.controller")
+const articlesController = require("./src/controllers/articles.controller")
+const cartController = require("./src/controllers/cart.controller")
 const { body } = require("express-validator");
 
 
@@ -24,7 +24,7 @@ app.set("view engine", "ejs"); // root directory for views views/
 app.use(express.static("public"));
 
 
-const product = require("./controllers/product.controller");
+const product = require("./src/controllers/product.controller");
 app.use("/products",product);
 
 app.use("/cart", cartController);
@@ -32,8 +32,8 @@ app.get("/", async (req, res)=>{
     res.render("index")
 })
 app.get("/", async (req, res) => {
-    let user = null;
-    res.render("index",{user});
+    let user = "";
+    res.render("index",user);
 });
 
 

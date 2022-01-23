@@ -164,3 +164,11 @@ body {
       box-sizing: border-box;
   }
   
+  .address{
+      width: 25%;
+      background-color: white;
+      height: 200px !important;
+      position: fixed;
+      top: 250px;
+      right: 100px;
+  }

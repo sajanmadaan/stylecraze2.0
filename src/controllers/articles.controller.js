@@ -21,10 +21,8 @@ articleRouter.get("/", async (req, res) =>{
         let page = +req.query.page || 1;
         let size = +req.query.size || 16;
         let skip = (page-1)*size;
-        console.log(filter, "filter controller")
         let articles;
-        
-        console.log(page,"controller")
+      
         if(filter)
         {
         filter = filter.charAt(0).toUpperCase() + filter.slice(1)

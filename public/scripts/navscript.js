@@ -453,3 +453,16 @@ function celebrityHtml() {
                 >
               </li>`;
 }
+
+
+
+// -----------Ham BurgerMenu-------------------
+
+document.getElementById("hamburger").addEventListener("click", () => {
+  let menu = document.getElementById("hamburger-menu");
+  menu.style.display = menu.style.display == "none" ? "block" : "none";
+});
+document.getElementById("makeup-link").addEventListener("click",(e)=>{
+    let desc = document.getElementById("makeup-description");
+    desc.style.display = desc.style.display == "none"?"block":"none";
+})

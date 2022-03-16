@@ -1,11 +1,58 @@
-body {
-  font-family: "Poppins", sans-serif;
-}
 header {
-  box-shadow: -1px 7px 20px -7px #afa2a2;
+  box-shadow: -1px 7px 20px -7px #AFA2A2;
   padding-block: 10px;
-  margin-bottom: 50px;
 }
+.hamburger-menu {
+  display: none;
+  position: absolute;
+  border-bottom-right-radius:5px ;
+  border-top-right-radius:5px ;
+  left: 0;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 50%;
+  margin: 0;
+  padding: 10px 20px;
+}
+/* please copy whole css because added something more at some places */
+/* hamburger styles here */
+.dr-hamburger-div {
+  display: inline;
+  cursor: pointer;
+}
+.hamburger-menu-item {
+  cursor: pointer;
+}
+.ham-link {
+  color: #777;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-transform: capitalize;
+  position: relative;
+}
+.ham-link >a {
+  color: #777;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-transform: capitalize;
+  position: relative;
+}
+.ham-link >a:hover {
+  color: #FE5C75;
+  background-color: #fff;
+  text-decoration: none;
+}
+.ham-link::after {
+  content: ">";
+  position: absolute;
+  right: 8%;
+  font-size: 25px;
+  top: 9px;
+}
+.item-link-desciption {
+  display: none;
+}
+/* hamburger style ends here */
 .dr-top-nav {
   display: flex;
   align-items: center;
@@ -16,11 +63,12 @@ header {
   justify-content: right;
   gap: 20%;
 }
-
+.dr-top-nav > div:first-child > img {
+  max-width: 100%;
+}
 #dr-left-menu {
   display: none;
 }
-
 .dr-nav-search {
   border: 1px solid #ddd;
   padding: 2px 15px;
@@ -37,17 +85,14 @@ header {
   outline: none;
   height: 100%;
 }
-
 .dr-dropdown-div img {
   max-width: 100%;
 }
-
 .dr-container {
   width: 80%;
   display: flex;
   margin: 20px auto;
 }
-
 .dr-container > ul {
   display: flex;
   list-style-type: none;
@@ -59,7 +104,7 @@ header {
   flex-wrap: wrap;
 }
 .dr-container > ul > li {
-  border-right: 2px solid #fe5c75;
+  border-right: 2px solid #FE5C75;
 }
 .dr-container > ul > li:last-child {
   border: none;
@@ -72,9 +117,8 @@ header {
   line-height: 22px;
   font-weight: 500;
 }
-
 .dr-container > ul > li > a:hover {
-  color: #fe5c75;
+  color: #FE5C75;
   transition: all 0.2s ease;
 }
 .dr-flex {
@@ -89,7 +133,7 @@ a {
 .dr-dropdown-div {
   flex-direction: column;
   position: absolute;
-  box-shadow: -1px 7px 20px -7px #afa2a2;
+  box-shadow: -1px 7px 20px -7px #AFA2A2;
   font-size: 14px;
   display: none;
   top: 20;
@@ -104,7 +148,7 @@ a {
   list-style-type: none;
 }
 .dr-dropdown-div > ul:first-child {
-  background-color: #f5f5f5;
+  background-color: #F5F5F5;
 }
 .dr-dropdown-div > ul:first-child > li {
   padding: 15px;
@@ -114,7 +158,7 @@ a {
   transition: all 0.2s ease;
 }
 .dr-dropdown-div > ul:first-child > li > a:hover {
-  color: #fe5c75;
+  color: #FE5C75;
   transition: all 0.2s ease;
 }
 .dr-dropdown-div > ul:nth-child(2) {
@@ -124,14 +168,13 @@ a {
   padding: 20px;
   text-transform: capitalize;
 }
-
 .dr-dropdown-div > ul:nth-child(2) > li > a > img:hover {
   opacity: 0.7;
   transition: all 0.4s ease;
 }
 .findmore {
   padding: 5px 20px;
-  border: 1px solid #fe5c75;
+  border: 1px solid #FE5C75;
   position: absolute;
   border-radius: 4px;
   right: 5px;
@@ -143,7 +186,6 @@ a {
   background-color: white;
   z-index: 1000;
 }
-
 .about-us-div ul {
   list-style-type: none;
   width: max-content;
@@ -155,12 +197,11 @@ a {
   display: inline-block;
 }
 .about-us-div ul li a:hover {
-  color: #fe5c75;
+  color: #FE5C75;
   transition: color 0.2s ease-in;
 }
-
-/* On screens that are 768px or less, set the background color to olive */
-@media screen and (max-width: 832px) {
+/* On screens that are 1026px or less, set the background color to olive */
+@media screen and (max-width: 1026px) {
   .dr-container > ul {
     display: none;
   }
@@ -184,7 +225,6 @@ a {
   .dr-left-menu-div {
     display: none;
   }
-
   .dr-left-menu-div > ul:first-child {
     list-style-type: none;
     margin-left: 0;
@@ -194,7 +234,6 @@ a {
     /* border: 2px solid red; */
     position: relative;
   }
-
   .dr-left-menu-div > ul:first-child > li > a {
     display: inline-block;
     padding: 10px 15px;
@@ -206,10 +245,9 @@ a {
     font-size: 18px;
   }
   .dr-left-menu-div > ul:first-child > li > a:hover {
-    color: #fe5c75;
+    color: #FE5C75;
   }
 }
-
 #user-login-icon-div {
   position: absolute;
   display: flex;
@@ -225,7 +263,14 @@ a {
   align-items: center;
   cursor: pointer;
 }
-
+@media screen and (max-width: 1026px) {
+  #user-login-icon-div {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+}
 #modal-container {
   position: absolute;
   width: 100%;
@@ -239,7 +284,6 @@ a {
   top: 0;
   left: 0;
 }
-
 #modal {
   width: 500px;
   /* border: 2px solid green; */
@@ -249,7 +293,6 @@ a {
   border-radius: 4px;
   position: relative;
 }
-
 .form-div {
   display: flex;
   flex-direction: column;
@@ -259,7 +302,6 @@ a {
   gap: 10px;
   flex-basis: 80%;
 }
-
 .form-div input {
   padding: 10px 5px 10px;
 }
@@ -269,15 +311,14 @@ a {
   font-size: 16px;
   color: white;
   border: none;
-  background-color: #fe5c75;
+  background-color: #FE5C75;
   font-weight: 600;
   letter-spacing: 1px;
 }
 .far,
 .fas {
-  color: #fe5c75;
+  color: #FE5C75;
 }
-
 .fa-times-circle {
   position: absolute;
   top: 10px;
@@ -285,17 +326,15 @@ a {
   font-size: 20px;
   cursor: pointer;
 }
-
 #sign-up-form-div {
   display: none;
 }
-
-#login-form,#register-form {
+#login-form,
+#register-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 #login-link,
 #register-link {
   color: blue;

@@ -29,3 +29,10 @@ margin-bottom: 40px;
     text-decoration: none;
     color: #ff5a78;
 }
+
+.foot{
+    bottom: 0;
+    position: fixed;
+    width: 30%;
+    margin-left: 40%;
+}

@@ -29,6 +29,15 @@
           <a href="/cart">Cart</a>
         </li>
     </ol>
+    <div class="address">
+        <h1 id="pinkpay">Address Details</h1>
+        <div class="costs">
+            <div>Your Addreess <span id="itemqty"><%- cart.user_id.address %></span></div>
+            <div>Mobile No. <span id="itemprice"><%- cart.user_id.mobile_no  %></span></div>
+            <div>Pincode <span id="itemprice"><%- cart.user_id.pincode  %></span></div>
+            <hr>
+        </div>
+    </div>
     <h1 id="cartItems">Cart Items</h1>
     <div id="cartcont">
        
@@ -38,7 +47,7 @@
                 <img class = "dVimg" src= "<%-el.image_link%>"/>
                 <p><%- el.name %></p>
                 <p class="price"><%-el.price  %>$</p>
-                <button class="deletebtn"><i class='far fa-trash-alt fa-2x'></i></button>
+                <button class="deletebtn"><a href="/delete/<%-cart.user_id._id%>/<%-el._id%>"><i class='far fa-trash-alt fa-2x'></i></a></button>
             </div>
             <%  }) %> 
      </div>
@@ -70,15 +79,6 @@
                 </div>
             </div>
             <!-- trial for address :)-->
-            <div class="payinfo shadow">
-                <h1 id="pinkpay">Adress Details</h1>
-                <div class="costs">
-                    <div>Your Addreess <span id="itemqty"><%- cart.user_id.address %></span></div>
-                    <div>Mobile No. <span id="itemprice"><%- cart.user_id.mobile_no  %></span></div>
-                    <div>Pincode <span id="itemprice"><%- cart.user_id.pincode  %></span></div>
-                    <hr>
-                </div>
-            </div>
         </div>
     </div>
     <div id = "DK_main"></div>

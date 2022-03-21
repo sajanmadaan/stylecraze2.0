@@ -22,21 +22,18 @@ body {
   .containerPay{
       display:flex;
       margin-left:180px;
-      grid-area: "";
+      gap: 20px;
   }
   .credit-container{
       width:300px;
-      height:334px;
       border:1px solid lightgrey;
       margin-top: 20px;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   .credit-container1>div,.credit-container>div{
       height:40px;
       border-bottom: 1px solid lightgrey;
-      padding-left:25px;
+      padding-left:15px;
       padding-top: 15px;
-      margin-left:7px;
       margin-right: 7px;
   }
   .bottomtext{
@@ -48,11 +45,9 @@ body {
   }
   .credit-container1{
       width:450px;
-      height:334px;
       margin-left: 10px;
       border:1px solid lightgrey;
       margin-top: 20px;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   .credit-container2{
       width:350px;
@@ -118,18 +113,18 @@ body {
   }
   #inputS{
       width:400px;
-      height:70px;
+      height: 52px;
       border:1px solid white;
-      padding-left: 30px;
+      padding-left: 17px;
       border-bottom: 1px solid lightgrey;
-      margin-left:7px;
       outline: none;
   }
   .credit-container1>p{
-      padding-left: 30px;
+      padding-left: 20px;
   }
-  .credit-container1>h3{
-      padding-left: 30px;
+  .credit-container1>h4{
+      padding-left: 20px;
+      padding-top: 5px;
   }
   
   #Ssize{
@@ -140,14 +135,18 @@ body {
       border-bottom: 1px solid lightgrey;
   }
   #payNow{
-      width:380px;
-      height:50px;
-      margin-top:5px;
+      width:300px;
+      height:45px;
+      margin-top:10px;
       background-color: #ff5a78;
       text-align:center;
       color: white;
-      margin-left: 35px;
+      margin-left: 15%;
+      border: none;
   }
+  #payNow:hover{
+    opacity: 0.8;
+}
   #Scolor{
       color:grey;
   }
@@ -165,10 +164,11 @@ body {
   }
   
   .address{
-      width: 25%;
-      background-color: white;
-      height: 200px !important;
-      position: fixed;
-      top: 250px;
-      right: 100px;
+     padding-left: 20px;
   }
+
+  .pinkpay2 {
+    color: #ff5a78;
+    padding-left: 20px;
+    font-weight: 600;
+}

@@ -56,14 +56,19 @@
     margin-left: 16px;
 }
 .payinfo{
-    height: 300px;
     padding-left: 18px;
     padding-right: 18px;
     margin-top: 20px;
     padding-top: 40px;
     background-color: white;
 }
-.payinfo h1{
+.address{
+    padding-left: 18px;
+    padding-right: 10px;
+    margin: 10px 0px;
+    margin-bottom: 20px;
+}
+.payinfo h1,.address h1{
     font-family: initial;
     font-weight: lighter;
 }

@@ -20,10 +20,10 @@ const register = async (req, res) => {
     if (user)
  return res.status(400).send({ message: "User with that email already exists" });
 
-    user = await User.create(req.body);
+    let dimple = await User.create(req.body);
 
-    const token = newToken(user);
-
+    let token = newToken(dimple);
+    console.log(token)
     return res.render("index");
   } catch (err) {
     return res.render("error", {err});

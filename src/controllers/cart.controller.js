@@ -63,11 +63,12 @@ router.get("/findpayment/:id", async (req,res) => {
 
 
 // Delete route 
-// router.get("/delete/:id1/:id2" , async (req, res) => {
+// router.delete("/delete/:id1/:id2" , async (req, res) => {
 //     try{
 //     let dlt_cart = await Cart.findById(req.params.id2).lean().exec()
+//     console.log("here")
   
-//    for(var i=0; i< dlt_cart.product_id.length; i++)
+//    for(var i=0; i< dlt_cart.length; i++)
 //    {
 //        if(dlt_cart.product_id[i]._id=== req.params.id1)
 //        {

@@ -9,6 +9,8 @@
   <link rel = "icon" href ="./img/download-modified.png">
   <link rel="icon" type="png" sizes="512x512"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/15dfb88336.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/675a12bd74.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/styles/payment.css" />
   <link rel="stylesheet" href="/styles/navbar.css" /> 
   <link rel="stylesheet" href="/styles/cart.css">
@@ -34,7 +36,17 @@
           <a href="/payment">Payment</a>
         </li>
     </ol>
-  <h3 class="payT">CHOOSE PAYMENT METHOD</h3>
+
+  <div class="address">
+      <h2 id="pinkpay">Address Details</h2>
+      <div class="adress-cont">
+          <div>Your Addreess:<span> <%- cartItms.user_id.address %></span></div>
+          <div>Mobile No. <span > <%- cartItms.user_id.mobile_no  %></span></div>
+          <div>Pincode <span> <%- cartItms.user_id.pincode  %></span></div>
+          <hr>
+      </div>
+  </div>
+  <h3 class="pinkpay2">Choose Payment Method</h3>
   <div class="containerPay">
 
     <div class="credit-container">
@@ -45,7 +57,6 @@
       <div>GooglePay</div>
       <div>Net Banking</div>
       <div>Cash on Delivery</div>
-      <div>Gift Card</div>
     </div>
 
 
@@ -55,7 +66,7 @@
         <h3>Credit/Debit Card</h3>
       </div>
       <input id="inputS" type="text" maxlength="16" placeholder="Card Number">
-      <h3>Expiry</h3>
+      <h4>Expiry</h4>
       <p><span><input id="Ssize" type="text" maxlength="2" placeholder="month"></span>
         <span>/</span>
         <span><input id="Ssize" type="text" maxlength="2" placeholder="year"></span>
@@ -64,21 +75,12 @@
           card</span>
       </p>
 
-      <p><span><input type="checkbox"></span>
-        <span>Save this card for future</span></p>
       <button id="payNow">PAY NOW: <span> <%- cartItms.totalprice.toFixed(2) %> $</span></button>
 
        <!-- trial for address :)-->
-      <div class="credit-container address">
-        <h1 id="pinkpay">Adress Details</h1>
-        <div class="adress-cont">
-            <div>Your Addreess:<span> <%- cartItms.user_id.address %></span></div>
-            <div>Mobile No. <span > <%- cartItms.user_id.mobile_no  %></span></div>
-            <div>Pincode <span> <%- cartItms.user_id.pincode  %></span></div>
-            <hr>
-        </div>
     </div>
-    </div>
+
+
     <div id="orderPlaced">
       <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
         <path d=" M32 0c4.6537 0 8.7168 2.6461 10.7679 6.506a12.228 12.228 0 0 1 3.1041-.4018c3.0873 0 6.1728 1.1668 8.5149
